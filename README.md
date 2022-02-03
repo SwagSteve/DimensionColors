@@ -5,7 +5,6 @@
 
 ## This Plugin Simply Makes Player Names In The Tablist Colored Depending On The Dimension They Are In!
 
-### Examples:
 
 # Overworld
 ![alt text](https://www.spigotmc.org/attachments/overworld-png.642672/)
