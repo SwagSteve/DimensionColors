@@ -1,0 +1,4 @@
+name: Dimensioncolors
+version: ${project.version}
+main: com.swagsteve.dimensioncolors.Dimensioncolors
+api-version: 1.16
