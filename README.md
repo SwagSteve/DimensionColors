@@ -1,19 +1,19 @@
 # DimensionColors
 
 
-![alt text](https://www.spigotmc.org/attachments/banner1-png.642715/)
+![alt text](https://i.postimg.cc/P5ZMVt0R/banner1.png)
 
 ## This Plugin Simply Makes Player Names In The Tablist Colored Depending On The Dimension They Are In!
 
 
 # Overworld
-![alt text](https://www.spigotmc.org/attachments/overworld-png.642672/)
+![alt text](https://i.postimg.cc/xd23Ww2T/overworld.png)
 
 # Nether
-![alt text](https://www.spigotmc.org/attachments/nether-png.642673/)
+![alt text](https://i.postimg.cc/8CmmDZpd/nether.png)
 
 # End
-![alt text](https://www.spigotmc.org/attachments/end-png.642674/)
+![alt text](https://i.postimg.cc/vB8Lm5TJ/end.png)
 
 
 
