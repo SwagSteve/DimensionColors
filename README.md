@@ -13,7 +13,3 @@
 
 # End
 ![alt text](https://i.postimg.cc/vB8Lm5TJ/end.png)
-
-
-
-###### This has only been tested for 1.16.5, Other versions haven't been tested and aren't guaranteed to work.
