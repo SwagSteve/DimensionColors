@@ -1,12 +1,12 @@
 Options:
-  # Enabled - true = Enabled, false = Disabled. (Default = true)
-  Enabled: true
-  # Overworld-Prefix - Enter Prefix For Player In Overworld Dimension, Color Codes Supported As: &a, &c, etc
-  Overworld-Prefix: '&a'
-  # Nether-Prefix - Enter Prefix For Player In Nether Dimension, Color Codes Supported As: &a, &c, etc
-  Nether-Prefix: '&c'
-  # End-Prefix - Enter Prefix For Player In End Dimension, Color Codes Supported As: &a, &c, etc
-  End-Prefix: '&d'
-Settings:
-  # Check-Delay - How Frequently The Plugin Checks A Player's Dimension. Can Be Adjusted Higher For Better Performance Or Lower For Real-Time Monitoring. Eg: 10 = Checks Every 10 In-Game Ticks.
-  Check-Delay: 10
+  # enabled - true = enabled, false = disabled. (Default = true)
+  enabled: true
+
+  # overworld-prefix - Enter tablist prefix for player in overworld dimension, color codes supported as: &a, &c, etc
+  overworld-prefix: '&a'
+
+  # nether-prefix - Enter tablist prefix for player in nether dimension, color codes supported as: &a, &c, etc
+  nether-prefix: '&c'
+
+  # end-prefix - Enter tablist prefix for player in end dimension, color codes supported as: &a, &c, etc
+  end-prefix: '&d'
