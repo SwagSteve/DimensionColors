@@ -8,8 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import static com.swagsteve.dimensioncolors.Dimensioncolors.runCheck;
-
 public class ReloadCommand implements CommandExecutor {
 
     @Override
@@ -46,7 +44,7 @@ public class ReloadCommand implements CommandExecutor {
                         }
                     } else {
                         for (Player all : Bukkit.getOnlinePlayers()) {
-                            runCheck(all);
+                            Dimensioncolors.colorFunctions.runCheck(all);
                         }
                     }
 

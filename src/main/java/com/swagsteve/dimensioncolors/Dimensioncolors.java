@@ -2,6 +2,7 @@ package com.swagsteve.dimensioncolors;
 
 import Listeners.WorldChange;
 import Utils.Utils;
+import Versions.Dimensioncolors1_13;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -24,6 +25,9 @@ public final class Dimensioncolors extends JavaPlugin implements Listener {
 
     //Reload cooldown
     public static HashMap<Player,Long> cooldown;
+
+    //Version code
+    public static ColorFunctions colorFunctions;
 
     @Override
     public void onEnable() {
@@ -53,17 +57,14 @@ public final class Dimensioncolors extends JavaPlugin implements Listener {
 
         //Listeners
         this.getServer().getPluginManager().registerEvents(new WorldChange(), this);
-    }
 
-    public static void runCheck(Player p) {
-        if (Dimensioncolors.confEnabled) {
-            if (p.getWorld().getEnvironment().equals(World.Environment.NETHER)) {
-                p.setPlayerListName(Utils.Color(Dimensioncolors.confNetherprefix + p.getName()));
-            } else if (p.getWorld().getEnvironment().equals(World.Environment.THE_END)) {
-                p.setPlayerListName(Utils.Color(Dimensioncolors.confEndprefix + p.getName()));
-            } else {
-                p.setPlayerListName(Utils.Color(Dimensioncolors.confOverworldprefix + p.getName()));
-            }
+        //Version management
+        String version = Bukkit.getVersion();
+        if (version.contains("1.13") || version.contains("1.14") || version.contains("1.15") || version.contains("1.16") || version.contains("1.17") || version.contains("1.18") || version.contains("1.19") || version.contains("1.20")) {
+            colorFunctions = new Dimensioncolors1_13();
+        } else {
+            getServer().getPluginManager().disablePlugin(this);
+            getLogger().info("Unsupported version detected! Disabling plugin...");
         }
     }
 
