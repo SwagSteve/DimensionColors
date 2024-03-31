@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class ReloadCommand implements CommandExecutor {
@@ -27,18 +26,15 @@ public class ReloadCommand implements CommandExecutor {
                     //Put player in cooldown
                     Dimensioncolors.cooldown.put(p, System.currentTimeMillis() + (5 * 1000));
 
+                    //Reload config
                     Dimensioncolors.getInstance().reloadConfig();
                     p.sendMessage(Utils.Color("[&dDC&r] &a&lConfig successfully reloaded!"));
 
-                    //Re-cache config
-                    FileConfiguration config = Dimensioncolors.getInstance().getConfig();
-                    Dimensioncolors.confNetherprefix = config.getString("Options.nether-prefix");
-                    Dimensioncolors.confEndprefix = config.getString("Options.end-prefix");
-                    Dimensioncolors.confOverworldprefix = config.getString("Options.overworld-prefix");
-                    Dimensioncolors.confEnabled = config.getBoolean("Options.enabled");
+                    //Cache config
+                    Dimensioncolors.cacheConfig(Dimensioncolors.getInstance());
 
                     //Reset tablist
-                    if (!Dimensioncolors.getInstance().getConfig().getBoolean("Options.enabled")) {
+                    if (!Dimensioncolors.confEnabled) {
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             all.setPlayerListName(p.getName());
                         }

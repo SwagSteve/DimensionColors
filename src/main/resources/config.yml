@@ -1,12 +1,15 @@
 Options:
-  # enabled - true = enabled, false = disabled. (Default = true)
+  # enabled - true = enabled, false = disabled
   enabled: true
 
-  # overworld-prefix - Enter tablist prefix for player in overworld dimension, color codes supported as: &a, &c, etc
+  # overworld-prefix & suffix - Enter tablist prefix & suffix for player in OVERWORLD dimension, color codes supported as: &a, &c, etc
   overworld-prefix: '&a'
+  overworld-suffix: ''
 
-  # nether-prefix - Enter tablist prefix for player in nether dimension, color codes supported as: &a, &c, etc
+  # nether-prefix & suffix - Enter tablist prefix & suffix for player in NETHER dimension, color codes supported as: &a, &c, etc
   nether-prefix: '&c'
+  nether-suffix: ''
 
-  # end-prefix - Enter tablist prefix for player in end dimension, color codes supported as: &a, &c, etc
+  # end-prefix & suffix - Enter tablist prefix & suffix for player in END dimension, color codes supported as: &a, &c, etc
   end-prefix: '&d'
+  end-suffix: ''

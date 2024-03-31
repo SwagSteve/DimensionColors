@@ -1,14 +1,11 @@
 package com.swagsteve.dimensioncolors;
 
 import Listeners.WorldChange;
-import Utils.Utils;
 import Versions.Dimensioncolors1_13;
 import org.bukkit.Bukkit;
-import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import java.io.File;
 import java.util.HashMap;
 
 public final class Dimensioncolors extends JavaPlugin implements Listener {
@@ -21,6 +18,7 @@ public final class Dimensioncolors extends JavaPlugin implements Listener {
 
     //Config variables
     public static String confNetherprefix, confEndprefix, confOverworldprefix;
+    public static String confNethersuffix, confEndsuffix, confOverworldsuffix;
     public static Boolean confEnabled;
 
     //Reload cooldown
@@ -39,18 +37,11 @@ public final class Dimensioncolors extends JavaPlugin implements Listener {
         cooldown = new HashMap<>();
 
         //Config
-        File tempConfig = new File(getDataFolder(), "config.yml");
-        if (!tempConfig.exists()) {
-            getLogger().info("Generating config...");
-            saveDefaultConfig();
-            reloadConfig();
-        }
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
 
-        // Cache config
-        confNetherprefix = getConfig().getString("Options.nether-prefix");
-        confEndprefix = getConfig().getString("Options.end-prefix");
-        confOverworldprefix = getConfig().getString("Options.overworld-prefix");
-        confEnabled = getConfig().getBoolean("Options.enabled");
+        //Cache config
+        cacheConfig(instance);
 
         //Commands
         this.getCommand("dcreload").setExecutor(new ReloadCommand());
@@ -73,8 +64,18 @@ public final class Dimensioncolors extends JavaPlugin implements Listener {
 
         //Disable Message
         getLogger().info("Disabling!");
+    }
 
-        //Save Config
-        saveConfig();
+    public static void cacheConfig(Dimensioncolors instance) {
+        confNetherprefix = instance.getConfig().getString("Options.nether-prefix");
+        confNethersuffix = instance.getConfig().getString("Options.nether-suffix");
+
+        confEndprefix = instance.getConfig().getString("Options.end-prefix");
+        confEndsuffix = instance.getConfig().getString("Options.end-suffix");
+
+        confOverworldprefix = instance.getConfig().getString("Options.overworld-prefix");
+        confOverworldsuffix = instance.getConfig().getString("Options.overworld-suffix");
+
+        confEnabled = instance.getConfig().getBoolean("Options.enabled");
     }
 }
